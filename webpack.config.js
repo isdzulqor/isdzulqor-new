@@ -57,7 +57,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             favicon: "./public/favicon.ico",
-            template: "./public/template.html" }),
+            template: "./public/template.html"
+        }),
         new MiniCssExtractPlugin({ filename: "[hash][id].css" }),
         new FixStyleOnlyEntriesPlugin(),
         new OptimizeCSSAssetsPlugin({}),
@@ -65,5 +66,19 @@ module.exports = {
             rotateUnicodeArray: true
         }, ['excluded_bundle_name.js']),
         new CleanWebpackPlugin()
-    ]
+    ],
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    compress: {
+                        drop_console: true
+                    },
+                    output: {
+                        comments: false
+                    }
+                },
+            }),
+        ]
+    }
 }

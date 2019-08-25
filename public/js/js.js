@@ -7,7 +7,15 @@ hideChat(0);
 
 $('#prime').click(function () {
     console.log("prime cok")
-    toggleFab();
+    toggleFab()
+});
+
+$('#chatSend').keyup(function (event) {
+    if (event.keyCode == 13 && !event.shiftKey) {
+        sendOnClick()
+    } else if (event.keyCode == 13 && event.shiftKey) {
+        
+    }
 });
 
 var message = $("#chatSend")
@@ -38,6 +46,10 @@ $('#chat_first_screen').click(function (e) {
 });
 
 $('#fab_chat_send').click(function (e) {
+    sendOnClick()
+});
+
+function sendOnClick() {
     msg = {
         from: userFrom,
         senderID: senderID,
@@ -72,7 +84,7 @@ $('#fab_chat_send').click(function (e) {
     // inform to user need to fill the message
     console.log("isien cok from.e")
     message.val('');
-});
+}
 
 function initSocket() {
     socket = io.connect('https://sambungan.herokuapp.com', {
