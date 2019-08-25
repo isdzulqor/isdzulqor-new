@@ -14,7 +14,8 @@ $('#chatSend').keyup(function (event) {
     if (event.keyCode == 13 && !event.shiftKey) {
         sendOnClick()
     } else if (event.keyCode == 13 && event.shiftKey) {
-
+        var txt = $('#chatSend')
+        txt.val(txt.val() + "\n")
     }
 });
 
