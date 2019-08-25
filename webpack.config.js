@@ -55,7 +55,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: "./public/template.html" }),
+        new HtmlWebpackPlugin({
+            favicon: "./public/favicon.ico",
+            template: "./public/template.html" }),
         new MiniCssExtractPlugin({ filename: "[hash][id].css" }),
         new FixStyleOnlyEntriesPlugin(),
         new OptimizeCSSAssetsPlugin({}),
@@ -64,21 +66,4 @@ module.exports = {
         }, ['excluded_bundle_name.js']),
         new CleanWebpackPlugin()
     ]
-    // optimization: {
-    //     minimize: true,
-    //     minimizer: [new UglifyJsPlugin({
-    //         include: /\.min\.js$/
-    //     })]
-    // },
-    // plugins: [
-    //     new JavaScriptObfuscator({
-    //         rotateUnicodeArray: true
-    //     }, ['excluded_bundle_name.js'])
-    // ]
-    // plugins: [
-    //     new HtmlWebpackPlugin({
-    //         hash: true,
-    //         filename: './index.html' //relative to root of the application
-    //     })
-    // ]
 }

@@ -223,6 +223,7 @@ function uuidv4() {
 function writeHtml() {
     body = document.getElementsByTagName('body')[0]
     body.innerHTML = `
+    <link rel="icon" href="`+ meVectorJpg + `">
     <div class="container only_container_zoom">
         <div class="row">
             <div class="col-lg-offset-4 col-lg-4 col-md-4 col-md-offset-4 col-lg-12 col-xs-12 custom_zoom">
@@ -254,7 +255,7 @@ function writeHtml() {
                                 <!-- <a href="#" class="card__author" title="author">Celeste Mills</a> -->
                             </div>
                             <div class="ornament_left">
-                                <img src="`+ floraSvg +`">
+                                <img src="`+ floraSvg + `">
                             </div>
                         </article>
                     </section>
