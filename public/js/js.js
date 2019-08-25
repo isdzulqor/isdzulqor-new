@@ -95,7 +95,6 @@ function initSocket() {
 
     //Listen on new_message
     socket.on("new_message", (data) => {
-        message.val('');
         console.log("NEW_MESSAGE COK", data)
         appendChat(data)
     })
