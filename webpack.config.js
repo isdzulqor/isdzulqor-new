@@ -12,7 +12,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './public/app.js',
@@ -65,7 +65,10 @@ module.exports = {
         new JavaScriptObfuscator({
             rotateUnicodeArray: true
         }, ['excluded_bundle_name.js']),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin([
+            { from: './public/CNAME' }
+        ])
     ],
     optimization: {
         minimizer: [

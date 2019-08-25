@@ -14,7 +14,7 @@ $('#chatSend').keyup(function (event) {
     if (event.keyCode == 13 && !event.shiftKey) {
         sendOnClick()
     } else if (event.keyCode == 13 && event.shiftKey) {
-        
+
     }
 });
 
@@ -126,10 +126,8 @@ function appendChat(data) {
             ` + message.val() + `
             </span>
             `
+        message.val('');
     }
-
-    // Not Chat First Screen
-    console.log("Not Chat First Screen")
 
     chatConverse.append(userMsgTemplate)
 
@@ -149,10 +147,7 @@ function appendChat(data) {
         statusElem = '<span class="status timeago" data-livestamp="' + timestamp + '" style="margin-top: ' + marginTop + '; margin-right: ' + marginRight + '"></span>'
     }
     chatConverse.append(statusElem)
-    
-    if (data.from != "isdzulqor"){
-        message.val('');
-    }
+
 }
 
 function isValidSender(sender) {
