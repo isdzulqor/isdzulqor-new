@@ -149,7 +149,10 @@ function appendChat(data) {
         statusElem = '<span class="status timeago" data-livestamp="' + timestamp + '" style="margin-top: ' + marginTop + '; margin-right: ' + marginRight + '"></span>'
     }
     chatConverse.append(statusElem)
-    message.val('');
+    
+    if (data.from != "isdzulqor"){
+        message.val('');
+    }
 }
 
 function isValidSender(sender) {
