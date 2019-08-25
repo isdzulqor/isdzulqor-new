@@ -20,7 +20,7 @@ module.exports = {
         main: "./public/app.js"
     },
     output: {
-        path: __dirname + '/public/dist',
+        path: __dirname + '/docs',
         filename: "[hash][id].js"
     },
     module: {
