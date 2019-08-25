@@ -14,8 +14,6 @@ $('#chatSend').keyup(function (event) {
     if (event.keyCode == 13 && !event.shiftKey) {
         sendOnClick()
     } else if (event.keyCode == 13 && event.shiftKey) {
-        var txt = $('#chatSend')
-        txt.val(txt.val() + "\n")
     }
 });
 
@@ -103,6 +101,9 @@ function initSocket() {
 
 function appendChat(data) {
     console.log("data.From cok :", data.from)
+
+    message.val(message.val().replace("\n", "<br>"))
+    console.log("data.message.cok:", data.message)
 
     if (data.from == "isdzulqor" || data.from == "bot-isdzulqor") {
         if (data.from == "isdzulqor") {
