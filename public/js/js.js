@@ -102,8 +102,7 @@ function initSocket() {
 function appendChat(data) {
     console.log("data.From cok :", data.from)
 
-    message.val(message.val().replace("\n", "<br>"))
-    console.log("data.message.cok:", data.message)
+    data.message = data.message.replace(/\n/g, "<br>")
 
     if (data.from == "isdzulqor" || data.from == "bot-isdzulqor") {
         if (data.from == "isdzulqor") {
@@ -124,7 +123,7 @@ function appendChat(data) {
     } else {
         var userMsgTemplate = `
             <span class="chat_msg_item chat_msg_item_user">
-            ` + message.val() + `
+            ` + data.message + `
             </span>
             `
         message.val('');
