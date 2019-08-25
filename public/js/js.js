@@ -146,7 +146,7 @@ function appendChat(data) {
         statusElem = '<span class="status timeago" data-livestamp="' + timestamp + '" style="margin-top: ' + marginTop + '; margin-right: ' + marginRight + '"></span>'
     }
     chatConverse.append(statusElem)
-
+    updateScroll()
 }
 
 function isValidSender(sender) {
@@ -220,6 +220,11 @@ function hideChat(hide) {
             $('#chat_fullscreen').css('display', 'block');
             break;
     }
+}
+
+function updateScroll() {
+    var element = document.getElementsByClassName("chat_converse")[0];
+    element.scrollTop = element.scrollHeight;
 }
 
 function uuidv4() {
