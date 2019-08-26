@@ -5,6 +5,7 @@ var floraSvg = require('../img/flora.svg')
 writeHtml()
 writeEmoji()
 hideChat(0);
+isMobile = checkIsMobile()
 
 $('#prime').click(function () {
     console.log("prime cok")
@@ -13,6 +14,9 @@ $('#prime').click(function () {
 
 $('#chatSend').keyup(function (event) {
     if (event.keyCode == 13 && !event.shiftKey) {
+        if (isMobile){
+            return
+        }
         str = message.val().replace(new RegExp('\n' + '$'), '');
         message.val(str)
         sendOnClick()
@@ -369,4 +373,11 @@ function appendHtml(el, str) {
     while (div.children.length > 0) {
         el.appendChild(div.children[0]);
     }
+}
+
+function checkIsMobile() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true
+    }
+    return false
 }
