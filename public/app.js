@@ -3,6 +3,7 @@ require('./css/bootstrap.min.css');
 require('./css/chat.css');
 require('./css/font.css');
 require('./css/style.css');
+require('./css/emoji.css');
 require('./img/me.jpg');
 require('./img/me_vector.jpg');
 require('./img/flora.svg');
