@@ -13,6 +13,8 @@ $('#prime').click(function () {
 
 $('#chatSend').keyup(function (event) {
     if (event.keyCode == 13 && !event.shiftKey) {
+        str = message.val().replace(new RegExp('\n' + '$'), '');
+        message.val(str)
         sendOnClick()
     } else if (event.keyCode == 13 && event.shiftKey) {
     }
@@ -101,6 +103,9 @@ function initSocket() {
 }
 
 function appendChat(data) {
+    if (data.message == "") {
+        return
+    }
     console.log("data.From cok :", data.from)
 
     data.message = data.message.replace(/\n/g, "<br>")
