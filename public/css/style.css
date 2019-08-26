@@ -243,6 +243,9 @@ border-bottom-right-radius: 12px;
   .custom_chat_zoom {
     zoom: 265%;
   }
+  .zoom_emoji{
+    zoom: 230%;
+  }
 }
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width:961px)  {  
@@ -267,6 +270,9 @@ border-bottom-right-radius: 12px;
   .only_chat_zoom{
     zoom: 79%;
   }
+  .zoom_emoji{
+    zoom: 230%;
+  }
 }
 /* big landscape tablets, laptops, and desktops */
 @media (min-width:1025px) { 
@@ -290,6 +296,9 @@ border-bottom-right-radius: 12px;
   }
   .only_chat_zoom{
     zoom: 90%;
+  }
+  .zoom_emoji{
+    zoom: 100%;
   }
 } 
 /* hi-res laptops and desktops */
