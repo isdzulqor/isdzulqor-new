@@ -73,12 +73,14 @@ function sendOnClick() {
             msg.message = userFrom
 
             appendChat(msg)
+            socket.emit('new_message', msg)
 
             msg.from = "bot-isdzulqor"
             msg.message = "Hey there! Thanks for hitting me Up. Just share something to me, please &#128513;"
 
             appendChat(msg)
             message.val('');
+            return
         }
 
         socket.emit('new_message', msg)
