@@ -79,7 +79,6 @@ function sendOnClick() {
 
             appendChat(msg)
             message.val('');
-            return
         }
 
         socket.emit('new_message', msg)
