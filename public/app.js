@@ -4,7 +4,7 @@ require('./css/chat.css');
 require('./css/font.css');
 require('./css/style.css');
 require('./css/emoji.css');
-require('./img/me_new.jpg');
+require('./img/new_me.jpg');
 require('./img/me_vector.jpg');
 require('./img/flora.svg');
 require('./index.html');

@@ -34,7 +34,7 @@ body {
 }
 
 .card--1 .card__img, .card--1 .card__img--hover {
-    background-image: url('./../img/me_new.jpg');
+    background-image: url('./../img/new_me.jpg');
 }
 
 .card--2 .card__img, .card--2 .card__img--hover {
