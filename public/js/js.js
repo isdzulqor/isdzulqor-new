@@ -1,5 +1,5 @@
 var meVectorJpg = require('../img/me_vector.jpg')
-var meJpg = require('../img/new_me.jpg')
+var meJpg = require('../img/me.jpg')
 var floraSvg = require('../img/flora.svg')
 
 writeHtml()
